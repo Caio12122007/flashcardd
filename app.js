@@ -4,17 +4,36 @@ let cartao = document.createElement(article)
 cartao.className = 'cartao'
 
 
-cartao.innerHTM = `
+cartao.innerHTML= `
 <div class="cartao__conteudo">
-<h3 class="programacao">futsal</h3>
+<h3>${categoria}</h3
 <div class="cartao__conteudo__pergunta">
-   <p> Em que ano surgiu o futsal?</p>
+   <p>${pergunta}</p>
 </div>
 <div class="cartao__conteudo__resposta">
-   <p>  década de 1930.</p>
+   <p>${resposta}</p>
 </div>
 </div>
 
 `
-container.appendChild(cartao)
+
+let respostEstaVisivel=false
+
+function viraCartao(){
+respostaEstaVisivel=!respostaEstaVisivel
+cartao.classList.toggle('active,respostaEstaVisivel')
+
+
 }
+
+cartao.addEventListener('click',viraCartao)
+
+container.appendChild(cartao)
+
+}
+
+
+
+
+
+
